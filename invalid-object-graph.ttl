@@ -1,0 +1,36 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix :  <http://example.com#> .
+
+:dog rdf:type :animal ;
+    rdfs:label "Dog" ;
+    :hasAnatomy [
+        :paws "4" ;
+        :HasFur "true" ;
+        :has_nested [
+            :b  [
+
+            ] ;
+             :c  [
+                :b [
+                    :invalid_ref _:multiref
+                ];
+            ] ;
+        ] ;
+    ] .
+:fish rdf:type :animal ;
+    rdfs:label "Fish" ;
+    :hasAnatomy [
+        :paws "0" ;
+        :hasFur "false" ;
+        :has_nested [
+            :invalid_ref _:multiref
+        ]
+    ] .
+_:multiref rdf:type :multiple_referenced_blanknode .
+#_:multiref2 rdf:type :multiple_referenced_blanknode .
+[] rdf:type :orphaned_node .
+
+
