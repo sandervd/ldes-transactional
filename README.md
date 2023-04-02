@@ -43,16 +43,11 @@ Although not all RDF graphs can be expressed as object graphs, the impact is con
 
 An RDF object graph can be considered a set of trees, or as a set of key-value pairs.
 
+### SHACL shape for object grpah conformance
+To check if a graph can be considered an object graph, a [shacl shape](object-graph-shacl.ttl) is provided that can check for conformance.
 
 
 
-
-Since the introduction of RDF (need ref) differential algos have been proposed to patch graphs.
-Additional: Need full objects: easy materalisation in document databases, or project to relational db.
-
-
-Constraints imposed on graph:
-For a graph to be serializable over LDES transacional, the following additional constraints are imposed. Although this means that not all RDF can be serialized, 
 
 # Related work
 https://www.w3.org/DesignIssues/Diff
